@@ -30,7 +30,22 @@ scores.sort(function (a, b) {
 //Make a table element helper
 function tablePoint(type, tableContent, rowNode){
   var el = document.createElement(type);
-  el.setContent = tableContent;
+  el.textContent = tableContent;
   rowNode.appendChild(el);
-  return el;
+  console.log(el);
+}
+
+//Make Row element
+function tableRow(user) {
+  var rowEl = document.createElement('tr');
+  rowEl.setAttribute('id', user);
+  tableEl.appendChild(rowEl);
+  console.log(rowEl);
+  return rowEl;
+}
+
+for (var i = 0; i < scores.length; i++) {
+  var row = tableRow(scores[i].user);
+  tablePoint('th', scores[i].user, row);
+  tablePoint('td', scores[i].points, row);
 }
