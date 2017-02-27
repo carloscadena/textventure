@@ -3,6 +3,7 @@ body{
   height:1000px;
   margin: 0 auto;
 }
+
 #content{
   overflow: auto;
   height: 100%
@@ -12,10 +13,8 @@ body{
   padding:40px;
   margin:40px;
   border:solid;
-
-
-
 }
+
 #Login, #main-table{
 position: relative;
 float:right;
@@ -24,6 +23,7 @@ float:right;
 #nav{
   height: 5px;
 }
+
 li{
   display: inline;
   padding: 40px;
@@ -35,18 +35,20 @@ li{
   background-color: #efefef;
   width:1000px;
 }
+
 h1{
   text-align: left;
   color: navy;
-position: relative;
+  position: relative;
 }
-#footer{
 
+#footer{
   padding:40px;
   background-color: white;
-border: solid;
+  border: solid;
 }
-*{
+
+* {
 
 }
 
