@@ -3,7 +3,7 @@
 // New player constructor
 function Player(username) {
   this.user = username;
-  points = 0;
+  this.points = 0;
 };
 
 var loginEl = document.getElementById('login');
@@ -12,10 +12,14 @@ function handleLogin(event) {
   event.preventDefault();
   event.stopPropagation();
 
-  var user = event.target.name.value;
+  var username = event.target.name.value;
+  console.log(username);
+  var user = new Player(username);
   console.log(user);
-  user = new Player(user);
-  console.log(user);
+
+  localStorage.user = JSON.stringify(user);
+  console.log(localStorage);
+  event.target.name.value = '';
 };
 
-addEventListener(loginEl, handleLogin);
+loginEl.addEventListener('submit', handleLogin);
