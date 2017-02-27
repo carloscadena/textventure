@@ -30,8 +30,10 @@ li{
 }
 
 #header{
+  border: solid;
   background-position: center;
   background-color: #efefef;
+  width:1000px;
 }
 h1{
   text-align: left;
@@ -39,6 +41,7 @@ h1{
 position: relative;
 }
 #footer{
+
   padding:40px;
   background-color: white;
 border: solid;
