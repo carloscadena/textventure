@@ -36,16 +36,15 @@ function tablePoint(type, tableContent, rowNode){
 }
 
 //Make Row element
-function tableRow(user) {
+function tableRow() {
   var rowEl = document.createElement('tr');
-  rowEl.setAttribute('id', user);
   tableEl.appendChild(rowEl);
   console.log(rowEl);
   return rowEl;
 }
 
 for (var i = 0; i < scores.length; i++) {
-  var row = tableRow(scores[i].user);
+  var row = tableRow();
   tablePoint('th', scores[i].user, row);
   tablePoint('td', scores[i].points, row);
 }
