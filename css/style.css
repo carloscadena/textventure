@@ -5,9 +5,9 @@
 }
 
 body {
-  width:1060px;
-  height:1000px;
   margin: 0 auto;
+  background-image: url("../img/annie-spratt-7928.jpg");
+  background-size: cover;
 }
 
 #content {
@@ -25,9 +25,9 @@ body {
 
 #nav{
   background-color: white;
-  padding:10px;
-  margin:5px;
-  border:solid;
+  padding: 10px;
+  margin: 5px;
+  border: solid;
   line-height: 10px;
 }
 
@@ -37,7 +37,7 @@ body {
   width: 75px;
   height: 75px;
   margin-top: 30px;
-  margin-left: 30px;
+  margin-left: 40px;
 }
 
 #main-title {
@@ -51,13 +51,17 @@ body {
 
 li{
   display: inline;
-  padding: 40px;
+  padding: 20px;
+  width: 20%;
 }
 
 #header {
   border: solid;
   background-color: #efefef;
   width:90%;
+  margin: auto;
+  margin-top: 30px;
+  opacity: 0.9;
 }
 
 h1 {
@@ -70,6 +74,8 @@ h1 {
   background-color: white;
   border: solid;
   width: 90%;
+  margin: auto;
+  opacity: 0.9;
 }
 
 .profile-photo {
@@ -81,4 +87,18 @@ fieldset {
   display: inline-block;
   margin-top: 30px;
   margin-right: 10px;
+}
+
+#main-text {
+  background-color: white;
+  opacity: 0.9;
+  margin: auto;
+  width: 90%;
+  margin-bottom: 20px;
+}
+
+#text-dragon {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  opacity: 0.9;
 }
