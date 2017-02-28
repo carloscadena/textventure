@@ -1,27 +1,40 @@
-body{
+*{
+  font-family: Arial, Verdana, sans-serif;
+  color: #665544;
+  text-align: center;
+}
+
+html {
+  text-align: center;
+}
+body {
   width:1060px;
   height:1000px;
   margin: 0 auto;
 }
 
-#content{
+#content {
   overflow: auto;
   height: 100%
 }
-#nav, #feature, #footer {
+#feature, #footer {
   background-color: white;
   padding:40px;
   margin:40px;
   border:solid;
 }
 
-#Login, #main-table{
-position: relative;
-float:right;
-
+#Login, #main-table {
+  position: relative;
+  float:right;
 }
+
 #nav{
-  height: 5px;
+  height: 10px;
+  background-color: white;
+  padding:40px;
+  margin:10px;
+  border:solid;
 }
 
 li{
@@ -33,7 +46,7 @@ li{
   border: solid;
   background-position: center;
   background-color: #efefef;
-  width:1000px;
+  width:90%;
 }
 
 h1{
@@ -48,8 +61,8 @@ h1{
   border: solid;
 }
 
-* {
-
+.profile-photo {
+  width: 35%;
 }
 
 /*body{*/
@@ -66,11 +79,12 @@ h1{
 padding:inherit; 10px 0px 5px 0px;*/
 /*background-color: #efefef; }*/
 
-.column3, .column2, .column3 {margin: 30px;
-width: 600px;
-float: ;
-padding:40px;
-border: solid;
+.column3, .column2, .column3 {
+  margin: 30px;
+  width: 600px;
+  float: ;
+  padding:40px;
+  border: solid;
 }
 
 /*}
@@ -88,8 +102,3 @@ display: inline;
   height: 100px;
 
 }*/
-
-*{
-  font-family: Arial, Verdana, sans-serif;
-  color: #665544;
-  text-align: center;
