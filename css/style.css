@@ -87,6 +87,19 @@ padding:inherit; 10px 0px 5px 0px;*/
   border: solid;
 }
 
+answer-form {
+  width: 75%;
+  height: 500px;
+  margin: 0 auto;
+}
+
+#answer0, #answer1, #answer2 {
+  display: block;
+  width: 80%;
+  height: 20px;
+  margin: 0 auto;
+}
+
 /*}
 li {
 display: inline;
