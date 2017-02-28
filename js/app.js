@@ -18,20 +18,61 @@ var altAnswers = [
 
 var sectionEl = document.getElementById('game-content');
 
+function StorySegment(question, answers, pointValue) {
+  this.question = question;
+  this.answerOne = answers[0];
+  this.answerTwo = answers[1];
+  this.answerThree = answers[2];
+  this.points = pointValue;
+  this.altPath;
+};
+
 var i = 0;
 var altPath = false;
 
 var questionLimit = mainQuestions.length;
 
+function createLabelElement(answers, i, j) {
+  var labelEl = document.createElement('label');
+  labelEl.setAttribute('for', 'answer' + j);
+  labelEl.textContent = answers[i][j];
+  return labelEl;
+}
+
+function createInputElement(j) {
+  var inputEl = document.createElement('input');
+  inputEl.setAttribute('id', 'answer' + j);
+  inputEl.setAttribute('type', 'radio');
+  inputEl.setAttribute('name', 'answer');
+  inputEl.setAttribute('value', j);
+  return inputEl;
+}
+
+function createMainStorySegments() {
+  var mainSegments = [];
+  for (var i = 0; i < mainQuestions.length; i++) {
+    mainSegments.push(new StorySegment(mainQuestions[i], mainAnswers[i], 10));
+  }
+  return mainSegments;
+};
+
+function createAltStorySegments() {
+  var altSegments = [];
+  for (var i = 0; i < altQuestions.length; i++) {
+    altSegments.push(new StorySegment(altQuestions[i], altAnswers[i], 5));
+  }
+  return altSegments;
+};
+
 function displayQuestion(question) {
   var el = document.createElement('p');
   el.setAttribute('id', 'questionEl');
   if (!altPath) {
-    el.textContent = question[i];
-    console.log(question[i]);
+    el.textContent = mainStorySegments[i].question;
+    console.log(mainStorySegments[i].question);
   } else {
-    el.textContent = question[i - 1];
-    console.log(question[i - 1]);
+    el.textContent = altStorySegments[i - 1].question;
+    console.log(altStorySegments[i - 1].question);
   }
   sectionEl.appendChild(el);
 };
@@ -42,28 +83,19 @@ function displayAnswers(answers) {
 
   for (var j = 0; j < 3; j++) {
     if (!altPath) {
-      var inputEl = document.createElement('input');
-      inputEl.setAttribute('id', 'answer' + j);
-      inputEl.setAttribute('type', 'radio');
-      inputEl.setAttribute('name', 'answer');
-      inputEl.setAttribute('value', j);
 
-      var labelEl = document.createElement('label');
-      labelEl.textContent = answers[i][j];
+      var labelEl = createLabelElement(answers, i, j);
 
-      inputEl.appendChild(labelEl);
+      var inputEl = createInputElement(j);
+
+      formEl.appendChild(labelEl);
       formEl.appendChild(inputEl);
     } else {
-      var inputEl = document.createElement('input');
-      inputEl.setAttribute('id', 'answer' + j);
-      inputEl.setAttribute('type', 'radio');
-      inputEl.setAttribute('name', 'answer');
-      inputEl.setAttribute('value', j);
+      var labelEl = createLabelElement(answers, i - 1, j);
 
-      var labelEl = document.createElement('label');
-      labelEl.textContent = answers[i - 1][j];
+      var inputEl = createInputElement(j);
 
-      inputEl.appendChild(labelEl);
+      formEl.appendChild(labelEl);
       formEl.appendChild(inputEl);
     }
   }
@@ -84,11 +116,8 @@ function handleSubmit(event) {
   event.preventDefault();
   i++;
   var answerOneEl = document.getElementById('answer0');
-  console.log(answerOneEl.id);
   var answerTwoEl = document.getElementById('answer1');
-  console.log(answerTwoEl.id);
   var answerThreeEl = document.getElementById('answer2');
-  console.log(answerThreeEl.id);
   var userAnswerId = event.target[0].checked;
   console.log(userAnswerId);
 
@@ -103,7 +132,7 @@ function handleSubmit(event) {
     displayAnswers(mainAnswers);
   } else if (event.target[1].checked) {
     altPath = true;
-    // i--;
+
     var questionEl = document.getElementById('questionEl');
     var formEl = document.getElementById('answer-form');
     sectionEl.removeChild(questionEl);
@@ -121,6 +150,12 @@ function handleSubmit(event) {
 };
 
 //------------------TEST APPLICATION------------------
+var mainStorySegments = createMainStorySegments();
+console.log(mainStorySegments);
+
+var altStorySegments = createAltStorySegments();
+console.log(altStorySegments);
+
 if (i === questionLimit) {
   console.log('User has finished the text adventure.');
 } else {
