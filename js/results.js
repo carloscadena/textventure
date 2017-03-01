@@ -70,7 +70,6 @@ function userPoints(scores){
 var context = document.getElementById('high-scores-graph').getContext('2d');
 var eachName = userName(scores);
 var allThePoints = userPoints(scores);
-//var colors = ['blue', 'blue', 'blue', 'blue', 'blue'];
 
 var chartData = {
   type: 'bar',
