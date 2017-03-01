@@ -93,6 +93,35 @@ fieldset {
   margin-bottom: 20px;
 }
 
+.team-members {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.ben {
+  display: inline-block;
+  width: 22%;
+  margin: 0 auto;
+}
+
+.carlos {
+  display: inline-block;
+  width: 22%;
+  margin: 0 auto;
+}
+
+.cameron {
+  display: inline-block;
+  width: 22%;
+  margin: 0 auto;
+}
+
+.james {
+  display: inline-block;
+  width: 22%;
+  margin: 0 auto;
+}
+
 #text-dragon {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -100,8 +129,13 @@ fieldset {
 }
 
 .profile-photo {
-  width: 35%;
+  width: 250px;
+  height: 300px;
   opacity: 1;
+}
+
+div h2 {
+  font-style: italic;
 }
 
 #question-image {
