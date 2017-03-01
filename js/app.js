@@ -206,6 +206,7 @@ function handleSubmit(event) {
       sectionEl.removeChild(formEl);
       User.points += 10;
       if (i === questionLimit) {
+        localStorage.user = JSON.stringify(User);
         console.log('User has completed the text adventure.');
         displayVictoryMessage();
       } else {
@@ -222,6 +223,7 @@ function handleSubmit(event) {
       sectionEl.removeChild(formEl);
       User.points += 5;
       if (i === questionLimit) {
+        localStorage.user = JSON.stringify(User);
         console.log('User has completed the text adventure.');
         displayVictoryMessage();
       } else {
@@ -251,6 +253,7 @@ function handleSubmit(event) {
       sectionEl.removeChild(formEl);
       User.points += 10;
       if (i === questionLimit) {
+        localStorage.user = JSON.stringify(User);
         console.log('User has completed the text adventure.');
         displayVictoryMessage();
       } else {
@@ -267,6 +270,7 @@ function handleSubmit(event) {
       sectionEl.removeChild(formEl);
       User.points += 5;
       if (i === questionLimit) {
+        localStorage.user = JSON.stringify(User);
         console.log('User has completed the text adventure.');
         displayVictoryMessage();
       } else {
@@ -296,6 +300,7 @@ function handleSubmit(event) {
       sectionEl.removeChild(formEl);
       User.points += 10;
       if (i === questionLimit) {
+        localStorage.user = JSON.stringify(User);
         console.log('User has completed the text adventure.');
         displayVictoryMessage();
       } else {
@@ -312,6 +317,7 @@ function handleSubmit(event) {
       sectionEl.removeChild(formEl);
       User.points += 5;
       if (i === questionLimit) {
+        localStorage.user = JSON.stringify(User);
         console.log('User has completed the text adventure.');
         displayVictoryMessage();
       } else {
