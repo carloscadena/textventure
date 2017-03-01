@@ -26,16 +26,20 @@ var altAnswers = [
   ['alt answer 1', 'alt answer 2', 'alt answer 3'],
   ['alt answer 1', 'alt answer 2', 'alt answer 3']];
 
+var mainImagePaths = [];
+
+var altImagePaths = [];
+
 var sectionEl = document.getElementById('game-content');
 
 //CONSTRUCTOR FUNCTION
-function StorySegment(question, answers, pointValue) {
+function StorySegment(question, answers, imagePath, pointValue) {
   this.question = question;
   this.answerOne = answers[0];
   this.answerTwo = answers[1];
   this.answerThree = answers[2];
+  this.image = imagePath;
   this.points = pointValue;
-  this.altPath;
 };
 
 var i = 0;
@@ -94,7 +98,7 @@ function createInputElement(j) {
 function createMainStorySegments() {
   var mainSegments = [];
   for (var i = 0; i < mainQuestions.length; i++) {
-    mainSegments.push(new StorySegment(mainQuestions[i], mainAnswers[i], 10));
+    mainSegments.push(new StorySegment(mainQuestions[i], mainAnswers[i], mainImagePaths[i], 10));
   }
   return mainSegments;
 };
@@ -102,7 +106,7 @@ function createMainStorySegments() {
 function createAltStorySegments() {
   var altSegments = [];
   for (var i = 0; i < altQuestions.length; i++) {
-    altSegments.push(new StorySegment(altQuestions[i], altAnswers[i], 5));
+    altSegments.push(new StorySegment(altQuestions[i], altAnswers[i], altImagePaths[i], 5));
   }
   return altSegments;
 };
@@ -174,6 +178,7 @@ function handleSubmit(event) {
       var formEl = document.getElementById('answer-form');
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
+      User.points += 10;
       console.log('User stayed on main path.');
       displayQuestion(mainQuestions);
       displayAnswers(mainAnswers);
@@ -183,6 +188,7 @@ function handleSubmit(event) {
       var formEl = document.getElementById('answer-form');
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
+      User.points += 5;
       console.log('User switched to alternate path.');
       displayQuestion(altQuestions);
       displayAnswers(altAnswers);
@@ -191,7 +197,9 @@ function handleSubmit(event) {
       var questionEl = document.getElementById('questionEl');
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
+      localStorage.user = JSON.stringify(User);
       console.log('User has died.');
+      console.log('user score = ' + User.points);
     }
   } else if (event.target[1].checked) {
     console.log(event.target[1].textContent);
@@ -201,6 +209,7 @@ function handleSubmit(event) {
       var formEl = document.getElementById('answer-form');
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
+      User.points += 10;
       console.log('User stayed on main path.');
       displayQuestion(mainQuestions);
       displayAnswers(mainAnswers);
@@ -210,6 +219,7 @@ function handleSubmit(event) {
       var formEl = document.getElementById('answer-form');
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
+      User.points += 5;
       console.log('User switched to alternate path.');
       displayQuestion(altQuestions);
       displayAnswers(altAnswers);
@@ -218,7 +228,9 @@ function handleSubmit(event) {
       var questionEl = document.getElementById('questionEl');
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
+      localStorage.user = JSON.stringify(User);
       console.log('User has died.');
+      console.log('user score = ' + User.points);
     }
   } else if (event.target[2].checked) {
     console.log(event.target[2].textContent);
@@ -228,6 +240,7 @@ function handleSubmit(event) {
       var formEl = document.getElementById('answer-form');
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
+      User.points += 10;
       console.log('User stayed on main path.');
       displayQuestion(mainQuestions);
       displayAnswers(mainAnswers);
@@ -237,6 +250,7 @@ function handleSubmit(event) {
       var formEl = document.getElementById('answer-form');
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
+      User.points += 5;
       console.log('User switched to alternate path.');
       displayQuestion(altQuestions);
       displayAnswers(altAnswers);
@@ -245,7 +259,9 @@ function handleSubmit(event) {
       var questionEl = document.getElementById('questionEl');
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
+      localStorage.user = JSON.stringify(User);
       console.log('User has died.');
+      console.log('user score = ' + User.points);
     }
   }
 };
@@ -257,7 +273,9 @@ console.log(mainStorySegments);
 var altStorySegments = createAltStorySegments();
 console.log(altStorySegments);
 
-if (i === questionLimit) {
+var User = JSON.parse(localStorage.user);
+
+if (i === questionLimit - 1) {
   console.log('User has finished the text adventure.');
 } else {
   var orderedAnswers = sortAnswers(mainAnswers);
