@@ -103,3 +103,9 @@ fieldset {
   width: 35%;
   opacity: 1;
 }
+
+#question-image {
+  display: block;
+  width: 700px;
+  height: 500px;
+}

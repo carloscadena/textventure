@@ -26,9 +26,9 @@ var altAnswers = [
   ['alt answer 1', 'alt answer 2', 'alt answer 3'],
   ['alt answer 1', 'alt answer 2', 'alt answer 3']];
 
-var mainImagePaths = [];
+var mainImagePaths = ['img/Carlos.jpg', 'img/Carlos.jpg', 'img/Carlos.jpg', 'img/Carlos.jpg', 'img/Carlos.jpg'];
 
-var altImagePaths = [];
+var altImagePaths = ['img/Carlos.jpg', 'img/Carlos.jpg', 'img/Carlos.jpg', 'img/Carlos.jpg', '../img/Carlos.jpg'];
 
 var sectionEl = document.getElementById('game-content');
 
@@ -112,15 +112,23 @@ function createAltStorySegments() {
 };
 
 function displayQuestion(question) {
+  var figureEl = document.createElement('figure');
+  figureEl.setAttribute('id', 'image-container');
+  var imageEl = document.createElement('img');
+  imageEl.setAttribute('id', 'question-image');
   var el = document.createElement('p');
   el.setAttribute('id', 'questionEl');
   if (!altPath) {
+    imageEl.setAttribute('src', mainStorySegments[i].image);
     el.textContent = mainStorySegments[i].question;
     console.log(mainStorySegments[i].question);
   } else {
+    imageEl.setAttribute('src', altStorySegments[i - 1].image);
     el.textContent = altStorySegments[i - 1].question;
     console.log(altStorySegments[i - 1].question);
   }
+  figureEl.appendChild(imageEl);
+  sectionEl.appendChild(figureEl);
   sectionEl.appendChild(el);
 };
 
@@ -165,6 +173,7 @@ function handleSubmit(event) {
   console.log(event);
   event.preventDefault();
   i++;
+  var figureEl = document.getElementById('image-container');
   var answerOneEl = document.getElementById('answer0');
   var answerTwoEl = document.getElementById('answer1');
   var answerThreeEl = document.getElementById('answer2');
@@ -176,6 +185,7 @@ function handleSubmit(event) {
       altPath = false;
       var questionEl = document.getElementById('questionEl');
       var formEl = document.getElementById('answer-form');
+      sectionEl.removeChild(figureEl);
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
       User.points += 10;
@@ -186,6 +196,7 @@ function handleSubmit(event) {
       altPath = true;
       var questionEl = document.getElementById('questionEl');
       var formEl = document.getElementById('answer-form');
+      sectionEl.removeChild(figureEl);
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
       User.points += 5;
@@ -195,6 +206,7 @@ function handleSubmit(event) {
     } else {
       var formEl = document.getElementById('answer-form');
       var questionEl = document.getElementById('questionEl');
+      sectionEl.removeChild(figureEl);
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
       localStorage.user = JSON.stringify(User);
@@ -207,6 +219,7 @@ function handleSubmit(event) {
       altPath = false;
       var questionEl = document.getElementById('questionEl');
       var formEl = document.getElementById('answer-form');
+      sectionEl.removeChild(figureEl);
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
       User.points += 10;
@@ -217,6 +230,7 @@ function handleSubmit(event) {
       altPath = true;
       var questionEl = document.getElementById('questionEl');
       var formEl = document.getElementById('answer-form');
+      sectionEl.removeChild(figureEl);
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
       User.points += 5;
@@ -226,6 +240,7 @@ function handleSubmit(event) {
     } else {
       var formEl = document.getElementById('answer-form');
       var questionEl = document.getElementById('questionEl');
+      sectionEl.removeChild(figureEl);
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
       localStorage.user = JSON.stringify(User);
@@ -238,6 +253,7 @@ function handleSubmit(event) {
       altPath = false;
       var questionEl = document.getElementById('questionEl');
       var formEl = document.getElementById('answer-form');
+      sectionEl.removeChild(figureEl);
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
       User.points += 10;
@@ -248,6 +264,7 @@ function handleSubmit(event) {
       altPath = true;
       var questionEl = document.getElementById('questionEl');
       var formEl = document.getElementById('answer-form');
+      sectionEl.removeChild(figureEl);
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
       User.points += 5;
@@ -257,6 +274,7 @@ function handleSubmit(event) {
     } else {
       var formEl = document.getElementById('answer-form');
       var questionEl = document.getElementById('questionEl');
+      sectionEl.removeChild(figureEl);
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
       localStorage.user = JSON.stringify(User);
