@@ -8,6 +8,7 @@ body {
   background-image: url("../img/annie-spratt-7928.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #content {
@@ -75,6 +76,7 @@ h1 {
   border: solid;
   width: 90%;
   margin: auto;
+  margin-top: 10px;
   opacity: 0.9;
 }
 
@@ -121,6 +123,12 @@ fieldset {
   font-size: 125px;
   margin: auto;
   margin-top: 10px;
+  background-color: white;
+  opacity: 0.9;
+  width: 90%;
+}
+
+#chart-background {
   background-color: white;
   opacity: 0.9;
   width: 90%;
