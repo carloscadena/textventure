@@ -1,30 +1,28 @@
 'use strict';
 
-var mainQuestions = ['Just graduated Codefellows and decide its time to learn surfing!?',
-  'How about some late night Salsa dancing at some local hot spots?',
-  'You dont need to be a good dancer to hit up Burning Man in Nevada! Are you going this summer?',
-  'main question 4.',
-  'main question 5.'];
+var mainQuestions = ['Do you want to learn to surf?',
+  'How about some Salsa dancing?',
+  'You don’t need to dance or surf to enjoy Burning Man in Nevada! Are you going this summer?',
+  'You had a Crazy week at Burning Man, in fact, you can hardly remember what happened. you do remember you have bills to pay and you code a resume that gets you hired on at a Japanese Teach English as a foreign language school!',
+  'Japan is the shit! Problem is when your contract runs out the company doesn’t want to rehire you. What now?'];
 
 var mainAnswers = [
-    ['Nah Brah', 'Heck yea! Let me go grab my wetsuit and board', 'huh? Surfing is for hippies. Im a programmer! 3'],
-    ['i cant dance', 'Im ready to make the dance floor even hotter!', 'I write code..thats about a artsy as i get'],
-    ['Im going to play it safe and go back to my desk job!', 'Switzerland sounds like a plan if I can make it past their customs officials!', 'Youll hit Burning man up, but thats about as much adventure as you want in life right now..'],
-    ['main answer 1', 'main answer 2', 'main answer 3'],
-    ['main answer 1', 'main answer 2', 'main answer 3']];
+    ['No thank you.', 'Heck yea! Let me go grab my wetsuit and board.', 'No way! Surfing is for hippies. I\'m a programmer!'],
+    ['I don\’t know how to dance.', 'I\’d rather go explore Switzerland!', 'Dance like the world is ending!'],
+    ['You\’ll hit Burning man up, but that’s about as much adventure as you want in life right now..', 'Switzerland sounds like a plan if I can make it past their customs officials!', 'I\’m going to play it safe and go back to my desk job!'],
+    ['You sign a 6 month contract and drink a few bottles of Sake to life, health, and prosperity.', 'Something is rotten in the state of coding” Silicon Valley is in desperate need of young talent willing to throw themselves into a startup and you choose to join the fray!', 'You reject the contract and join some hipster burning man tribe that drives an eco bus around the world and builds sustainable housing for indigenous locals.'],
+    ['Start an american themed club/cafe', 'You eat massive quantities of food and start training to become a sumo Wrestler.', 'You go back to Safe, USA!']];
 
-var altQuestions = ['Youve ended up surfing in Australia! Funny how those little ideas grow. Are you ready to go get a coding job or get lost somewhere else?',
-  'You only live once you remember Switzerland sounded cool in Hemingways A Farewell To Arms, you even decide cross the border on a boat from Bavaria in Germany only to be met by a customs offiial who hates Americans! he glares at you, " what is your business in Switzerland!?" ',
-  'PhewWWf! The customs officer agrees with how beautiful Switzerland is and lets you in. Your visit in Switzerland was awesome, but now youve decided to make traveling your job by adding some skills to go along with coding. ',
-  'alternate question 4 (redirect from question 4).',
-  'alternate question 5 (redirect from question 5).'];
+var altQuestions = ['You\’ve ended up surfing in Australia! Funny how those little ideas grow. Are you ready to go get a coding job or get lost somewhere else?',
+  'You decide to travel to Switzerland and are met by a customs official who glares at you and asks, \"What is your business in Switzerland!?\"',
+  'PhewWWf! The customs officer seemed to be in a good mood and lets you in. Your visit in Switzerland was awesome, but now you’ve decided to do some work.',
+  'You got hired on at a startup specialising in… what do you do?'];
 
 var altAnswers = [
-  ['Ive had my fun and am ready to join the rat race with that office life', 'I hear the Swiss Alps calling!', ' vous parlez francais?'],
-  ['My business, sir, is tearing up the Alps with my skis/snowboard', 'I want to see your beautiful countryside', 'Isnt it obvious? You guys are consistently topping the quality of life index!'],
-  ['Photography! I can totally develop my own portfolio ', 'Language! Ive always wanted to teach English as a second language and I can develop my own virtual resume', 'Yacht mate, I can use my coding skills to entice a rich yacht owner to hire me on to cruise the med and do his busy work'],
-  ['alt answer 1', 'alt answer 2', 'alt answer 3'],
-  ['alt answer 1', 'alt answer 2', 'alt answer 3']];
+  ['Some of your new surfing bro\’s are heading to burning man in the summer, go with them.', 'I hear the Swiss Alps calling!', 'Vous parlez francais?'],
+  ['I don\’t have to deal with this guy, i can still meet up the Surfers at burning man.', 'I want to see your beautiful countryside.', 'My buisiness is my business, i don\'t have to tell you!'],
+  ['A company in Japan is hiring.', 'A local startup is hiring, you’re not quite sure what for but hey, what could go wrong?', 'Yacht mate, I can use my coding skills to entice a rich yacht owner to hire me on to cruise the med and do his busy work.'],
+  ['Work hard and make it to the top of the food chain at the company.', 'Quit and try your luck as a serial entrepreneur.', 'Decide coding is not for you and fall back on your previous career.']];
 
 var mainImagePaths = ['img/surfGirl.jpg', 'img/Swiss.jpg', 'img/swissMountains.jpg', 'img/Carlos.jpg', 'img/Carlos.jpg'];
 
