@@ -111,6 +111,22 @@ function createAltStorySegments() {
   return altSegments;
 };
 
+function displayVictoryMessage() {
+  var sectionEl = document.getElementById('game-content');
+  var messageEl = document.createElement('p');
+  messageEl.setAttribute('id', 'victory-message');
+  messageEl.textContent = 'YOU WON! Thank you for trying our text-adventure! Click on the results link to see how you did compared to the other players!';
+  sectionEl.appendChild(messageEl);
+};
+
+function displayGameOver() {
+  var sectionEl = document.getElementById('game-content');
+  var messageEl = document.createElement('p');
+  messageEl.setAttribute('id', 'game-over-message');
+  messageEl.textContent = 'I\'m very sorry, it appears that the last choice you made killed you.';
+  sectionEl.appendChild(messageEl);
+};
+
 function displayQuestion(question) {
   var figureEl = document.createElement('figure');
   figureEl.setAttribute('id', 'image-container');
@@ -189,9 +205,14 @@ function handleSubmit(event) {
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
       User.points += 10;
-      console.log('User stayed on main path.');
-      displayQuestion(mainQuestions);
-      displayAnswers(mainAnswers);
+      if (i === questionLimit) {
+        console.log('User has completed the text adventure.');
+        displayVictoryMessage();
+      } else {
+        console.log('User stayed on main path.');
+        displayQuestion(mainQuestions);
+        displayAnswers(mainAnswers);
+      }
     } else if (orderedAnswers[0] === mainStorySegments[i - 1].answerTwo || orderedAnswers[0] === altStorySegments[i - 1].answerTwo) {
       altPath = true;
       var questionEl = document.getElementById('questionEl');
@@ -200,9 +221,14 @@ function handleSubmit(event) {
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
       User.points += 5;
-      console.log('User switched to alternate path.');
-      displayQuestion(altQuestions);
-      displayAnswers(altAnswers);
+      if (i === questionLimit) {
+        console.log('User has completed the text adventure.');
+        displayVictoryMessage();
+      } else {
+        console.log('User switched to alternate path.');
+        displayQuestion(altQuestions);
+        displayAnswers(altAnswers);
+      }
     } else {
       var formEl = document.getElementById('answer-form');
       var questionEl = document.getElementById('questionEl');
@@ -212,6 +238,7 @@ function handleSubmit(event) {
       localStorage.user = JSON.stringify(User);
       console.log('User has died.');
       console.log('user score = ' + User.points);
+      displayGameOver();
     }
   } else if (event.target[1].checked) {
     console.log(event.target[1].textContent);
@@ -223,9 +250,14 @@ function handleSubmit(event) {
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
       User.points += 10;
-      console.log('User stayed on main path.');
-      displayQuestion(mainQuestions);
-      displayAnswers(mainAnswers);
+      if (i === questionLimit) {
+        console.log('User has completed the text adventure.');
+        displayVictoryMessage();
+      } else {
+        console.log('User stayed on main path.');
+        displayQuestion(mainQuestions);
+        displayAnswers(mainAnswers);
+      }
     } else if (orderedAnswers[1] === mainStorySegments[i - 1].answerTwo || orderedAnswers[1] === altStorySegments[i - 1].answerTwo) {
       altPath = true;
       var questionEl = document.getElementById('questionEl');
@@ -234,9 +266,14 @@ function handleSubmit(event) {
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
       User.points += 5;
-      console.log('User switched to alternate path.');
-      displayQuestion(altQuestions);
-      displayAnswers(altAnswers);
+      if (i === questionLimit) {
+        console.log('User has completed the text adventure.');
+        displayVictoryMessage();
+      } else {
+        console.log('User switched to alternate path.');
+        displayQuestion(altQuestions);
+        displayAnswers(altAnswers);
+      }
     } else {
       var formEl = document.getElementById('answer-form');
       var questionEl = document.getElementById('questionEl');
@@ -246,6 +283,7 @@ function handleSubmit(event) {
       localStorage.user = JSON.stringify(User);
       console.log('User has died.');
       console.log('user score = ' + User.points);
+      displayGameOver();
     }
   } else if (event.target[2].checked) {
     console.log(event.target[2].textContent);
@@ -257,9 +295,14 @@ function handleSubmit(event) {
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
       User.points += 10;
-      console.log('User stayed on main path.');
-      displayQuestion(mainQuestions);
-      displayAnswers(mainAnswers);
+      if (i === questionLimit) {
+        console.log('User has completed the text adventure.');
+        displayVictoryMessage();
+      } else {
+        console.log('User stayed on main path.');
+        displayQuestion(mainQuestions);
+        displayAnswers(mainAnswers);
+      }
     } else if (orderedAnswers[2] === mainStorySegments[i - 1].answerTwo || orderedAnswers[2] === altStorySegments[i - 1].answerTwo) {
       altPath = true;
       var questionEl = document.getElementById('questionEl');
@@ -268,9 +311,14 @@ function handleSubmit(event) {
       sectionEl.removeChild(questionEl);
       sectionEl.removeChild(formEl);
       User.points += 5;
-      console.log('User switched to alternate path.');
-      displayQuestion(altQuestions);
-      displayAnswers(altAnswers);
+      if (i === questionLimit) {
+        console.log('User has completed the text adventure.');
+        displayVictoryMessage();
+      } else {
+        console.log('User switched to alternate path.');
+        displayQuestion(altQuestions);
+        displayAnswers(altAnswers);
+      }
     } else {
       var formEl = document.getElementById('answer-form');
       var questionEl = document.getElementById('questionEl');
@@ -280,6 +328,7 @@ function handleSubmit(event) {
       localStorage.user = JSON.stringify(User);
       console.log('User has died.');
       console.log('user score = ' + User.points);
+      displayGameOver();
     }
   }
 };
@@ -293,10 +342,6 @@ console.log(altStorySegments);
 
 var User = JSON.parse(localStorage.user);
 
-if (i === questionLimit - 1) {
-  console.log('User has finished the text adventure.');
-} else {
-  var orderedAnswers = sortAnswers(mainAnswers);
-  displayQuestion(mainQuestions);
-  displayAnswers(mainAnswers);
-}
+var orderedAnswers = sortAnswers(mainAnswers);
+displayQuestion(mainQuestions);
+displayAnswers(mainAnswers);
