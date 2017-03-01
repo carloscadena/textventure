@@ -1,6 +1,5 @@
 *{
   font-family: Arial, Verdana, sans-serif;
-  color: #665544;
   text-align: center;
 }
 
@@ -8,6 +7,7 @@ body {
   margin: 0 auto;
   background-image: url("../img/annie-spratt-7928.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #content {
@@ -102,4 +102,21 @@ fieldset {
 .profile-photo {
   width: 35%;
   opacity: 1;
+}
+
+#highscore {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+#gameover {
+  font-family: 'VT323', monospace;
+  color: #bf2030;
+  height: 135px;
+  font-size: 125px;
+  margin: auto;
+  margin-top: 10px;
+  background-color: white;
+  opacity: 0.9;
+  width: 90%;
 }
