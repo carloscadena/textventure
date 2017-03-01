@@ -104,6 +104,11 @@ fieldset {
   opacity: 1;
 }
 
+#question-image {
+  display: block;
+  width: 700px;
+  height: 500px;
+
 #highscore {
   margin-top: 10px;
   margin-bottom: 0px;
