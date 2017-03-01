@@ -6,18 +6,18 @@ var mainQuestions = ['Just graduated Codefellows and decide its time to learn su
   'main question 4.',
   'main question 5.'];
 
+var mainAnswers = [
+    ['Nah Brah', 'Heck yea! Let me go grab my wetsuit and board', 'huh? Surfing is for hippies. Im a programmer! 3'],
+    ['i cant dance', 'Im ready to make the dance floor even hotter!', 'I write code..thats about a artsy as i get'],
+    ['Im going to play it safe and go back to my desk job!', 'Switzerland sounds like a plan if I can make it past their customs officials!', 'Youll hit Burning man up, but thats about as much adventure as you want in life right now..'],
+    ['main answer 1', 'main answer 2', 'main answer 3'],
+    ['main answer 1', 'main answer 2', 'main answer 3']];
+
 var altQuestions = ['Youve ended up surfing in Australia! Funny how those little ideas grow. Are you ready to go get a coding job or get lost somewhere else?',
   'You only live once you remember Switzerland sounded cool in Hemingways A Farewell To Arms, you even decide cross the border on a boat from Bavaria in Germany only to be met by a customs offiial who hates Americans! he glares at you, " what is your business in Switzerland!?" ',
-  'PhewWWf! The customs officer agrees with how beautiful Switzerland is and lets you in. Youre visit in Switzerland was awesome, but now youve decided to make traveling your job by adding some skills to go along with coding. ',
+  'PhewWWf! The customs officer agrees with how beautiful Switzerland is and lets you in. Your visit in Switzerland was awesome, but now youve decided to make traveling your job by adding some skills to go along with coding. ',
   'alternate question 4 (redirect from question 4).',
   'alternate question 5 (redirect from question 5).'];
-
-var mainAnswers = [
-  ['Nah Brah', 'Heck yea! Let me go grab my wetsuit and board', 'huh? Surfing is for hippies. Im a programmer! 3'],
-  ['i cant dance', 'Im ready to make the dance floor even hotter!', 'I write code..thats about a artsy as i get'],
-  ['Im going to play it safe and go back to my desk job!', 'Switzerland sounds like a plan if I can make it past their customs officials!', 'Youll hit Burning man up, but thats about as much adventure as you want in life right now..'],
-  ['main answer 1', 'main answer 2', 'main answer 3'],
-  ['main answer 1', 'main answer 2', 'main answer 3']];
 
 var altAnswers = [
   ['Ive had my fun and am ready to join the rat race with that office life', 'I hear the Swiss Alps calling!', ' vous parlez francais?'],
@@ -26,9 +26,9 @@ var altAnswers = [
   ['alt answer 1', 'alt answer 2', 'alt answer 3'],
   ['alt answer 1', 'alt answer 2', 'alt answer 3']];
 
-var mainImagePaths = ['img/Carlos.jpg', 'img/Carlos.jpg', 'img/Carlos.jpg', 'img/Carlos.jpg', 'img/Carlos.jpg'];
+var mainImagePaths = ['img/surfGirl.jpg', 'img/Swiss.jpg', 'img/swissMountains.jpg', 'img/Carlos.jpg', 'img/Carlos.jpg'];
 
-var altImagePaths = ['img/Carlos.jpg', 'img/Carlos.jpg', 'img/Carlos.jpg', 'img/Carlos.jpg', '../img/Carlos.jpg'];
+var altImagePaths = ['img/Kangaroo.jpg', 'img/GOT.jpg', 'img/bridge.jpg', 'img/Carlos.jpg', 'img/Carlos.jpg'];
 
 var sectionEl = document.getElementById('game-content');
 
