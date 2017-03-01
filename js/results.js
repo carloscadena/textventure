@@ -73,13 +73,13 @@ var eachName = userName(scores);
 var allThePoints = userPoints(scores);
 var colors = ['blue'];
 
-Chart.plugins.register({
-  beforeDraw: function(chartInstance) {
-    var ctx = chartInstance.chart.ctx;
-    ctx.fillStyle = 'white';
-    ctx.fillRect(0, 0, chartInstance.chart.width, chartInstance.chart.height);
-  }
-});
+// Chart.plugins.register({
+//   beforeDraw: function(chartInstance) {
+//     var ctx = chartInstance.chart.ctx;
+//     ctx.fillStyle = 'white';
+//     ctx.fillRect(0, 0, chartInstance.chart.width, chartInstance.chart.height);
+//   }
+// });
 
 //borrowed code above from: https://github.com/chartjs/Chart.js/issues/2830
 
@@ -94,7 +94,6 @@ var chartData = {
     }],
   },
   options: {
-    responsive: true,
     scales: {
       yAxes: [{
         ticks: {
