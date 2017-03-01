@@ -11,6 +11,12 @@ body {
   background-attachment: fixed;
 }
 
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
 #content {
   overflow: auto;
   height: 100%
@@ -162,8 +168,15 @@ div h2 {
   width: 90%;
 }
 
-#chart-background {
+.chart-wrapper {
+  width: 95%;
   background-color: white;
+  color: white;
+}
+
+#high-scores-graph {
+  max-width: 70%;
+  height: 70%;
+  margin: 0 auto;
   opacity: 0.9;
-  width: 90%;
 }

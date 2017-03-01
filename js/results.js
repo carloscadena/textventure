@@ -33,7 +33,7 @@ function tablePoint(type, tableContent, rowNode){
   el.textContent = tableContent;
   rowNode.appendChild(el);
   console.log(el);
-}
+};
 
 //Make Row element
 function tableRow() {
@@ -41,15 +41,13 @@ function tableRow() {
   tableEl.appendChild(rowEl);
   console.log(rowEl);
   return rowEl;
-}
+};
 
 for (var i = 0; i < scores.length; i++) {
   var row = tableRow();
   tablePoint('th', scores[i].user, row);
   tablePoint('td', scores[i].points, row);
 }
-
-var context = document.getElementById('high-scores-graph').getContext('2d');
 
 function userName(scores){
   var theName = [];
@@ -58,7 +56,7 @@ function userName(scores){
     theName.push(scores[i].user);
   }
   return theName;
-}
+};
 
 function userPoints(scores){
   var totalPoints = [];
@@ -67,21 +65,12 @@ function userPoints(scores){
     totalPoints.push(scores[i].points);
   }
   return totalPoints;
-}
+};
 
+var context = document.getElementById('high-scores-graph').getContext('2d');
 var eachName = userName(scores);
 var allThePoints = userPoints(scores);
-var colors = ['blue'];
-
-Chart.plugins.register({
-  beforeDraw: function(chartInstance) {
-    var ctx = chartInstance.chart.ctx;
-    ctx.fillStyle = 'white';
-    ctx.fillRect(0, 0, chartInstance.chart.width, chartInstance.chart.height);
-  }
-});
-
-//borrowed code above from: https://github.com/chartjs/Chart.js/issues/2830
+//var colors = ['blue', 'blue', 'blue', 'blue', 'blue'];
 
 var chartData = {
   type: 'bar',
@@ -90,18 +79,27 @@ var chartData = {
     datasets: [{
       label: 'High Scores',
       data: allThePoints,
-      backgroundColor: colors
+      backgroundColor: 'lime'
     }],
   },
   options: {
-    responsive: true,
     scales: {
       yAxes: [{
         ticks: {
+          fontSize: 24,
+          fontColor: 'lime',
+          beginAtZero: true
+        }
+      }],
+      xAxes: [{
+        ticks: {
+          fontSize: 24,
+          fontColor: 'lime',
           beginAtZero: true
         }
       }]
     }
   }
 };
+
 var myChart = new Chart(context, chartData);
