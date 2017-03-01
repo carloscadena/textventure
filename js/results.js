@@ -48,3 +48,60 @@ for (var i = 0; i < scores.length; i++) {
   tablePoint('th', scores[i].user, row);
   tablePoint('td', scores[i].points, row);
 }
+
+var context = document.getElementById('high-scores-graph').getContext('2d');
+
+function userName(scores){
+  var theName = [];
+
+  for (var i = 0; i < scores.length; i++){
+    theName.push(scores[i].user);
+  }
+  return theName;
+}
+
+function userPoints(scores){
+  var totalPoints = [];
+
+  for (var i = 0; i < scores.length; i++){
+    totalPoints.push(scores[i].points);
+  }
+  return totalPoints;
+}
+
+var eachName = userName(scores);
+var allThePoints = userPoints(scores);
+var colors = ['blue'];
+
+Chart.plugins.register({
+  beforeDraw: function(chartInstance) {
+    var ctx = chartInstance.chart.ctx;
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, chartInstance.chart.width, chartInstance.chart.height);
+  }
+});
+
+//borrowed code above from: https://github.com/chartjs/Chart.js/issues/2830
+
+var chartData = {
+  type: 'bar',
+  data: {
+    labels: eachName,
+    datasets: [{
+      label: 'High Scores',
+      data: allThePoints,
+      backgroundColor: colors
+    }],
+  },
+  options: {
+    responsive: true,
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
+};
+var myChart = new Chart(context, chartData);
