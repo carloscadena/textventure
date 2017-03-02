@@ -72,29 +72,29 @@ function sortAnswers() {
     }
   } else {
     if (randNum === 1) {
-      newAnswers.push(altStorySegments[i - 1].answerOne);
-      newAnswers.push(altStorySegments[i - 1].answerTwo);
-      newAnswers.push(altStorySegments[i - 1].answerThree);
+      newAnswers.push(altStorySegments[i].answerOne);
+      newAnswers.push(altStorySegments[i].answerTwo);
+      newAnswers.push(altStorySegments[i].answerThree);
     } else if (randNum === 2) {
-      newAnswers.push(altStorySegments[i - 1].answerOne);
-      newAnswers.push(altStorySegments[i - 1].answerThree);
-      newAnswers.push(altStorySegments[i - 1].answerTwo);
+      newAnswers.push(altStorySegments[i].answerOne);
+      newAnswers.push(altStorySegments[i].answerThree);
+      newAnswers.push(altStorySegments[i].answerTwo);
     } else if (randNum === 3) {
-      newAnswers.push(altStorySegments[i - 1].answerTwo);
-      newAnswers.push(altStorySegments[i - 1].answerOne);
-      newAnswers.push(altStorySegments[i - 1].answerThree);
+      newAnswers.push(altStorySegments[i].answerTwo);
+      newAnswers.push(altStorySegments[i].answerOne);
+      newAnswers.push(altStorySegments[i].answerThree);
     } else if (randNum === 4) {
-      newAnswers.push(altStorySegments[i - 1].answerTwo);
-      newAnswers.push(altStorySegments[i - 1].answerThree);
-      newAnswers.push(altStorySegments[i - 1].answerOne);
+      newAnswers.push(altStorySegments[i].answerTwo);
+      newAnswers.push(altStorySegments[i].answerThree);
+      newAnswers.push(altStorySegments[i].answerOne);
     } else if (randNum === 5) {
-      newAnswers.push(altStorySegments[i - 1].answerThree);
-      newAnswers.push(altStorySegments[i - 1].answerOne);
-      newAnswers.push(altStorySegments[i - 1].answerTwo);
+      newAnswers.push(altStorySegments[i].answerThree);
+      newAnswers.push(altStorySegments[i].answerOne);
+      newAnswers.push(altStorySegments[i].answerTwo);
     } else {
-      newAnswers.push(altStorySegments[i - 1].answerThree);
-      newAnswers.push(altStorySegments[i - 1].answerTwo);
-      newAnswers.push(altStorySegments[i - 1].answerOne);
+      newAnswers.push(altStorySegments[i].answerThree);
+      newAnswers.push(altStorySegments[i].answerTwo);
+      newAnswers.push(altStorySegments[i].answerOne);
     }
   }
 
@@ -126,7 +126,7 @@ function createMainStorySegments() {
 };
 
 function createAltStorySegments() {
-  var altSegments = [];
+  var altSegments = [''];
   for (var i = 0; i < altQuestions.length; i++) {
     altSegments.push(new StorySegment(altQuestions[i], altAnswers[i], altImagePaths[i], 5));
   }
@@ -161,9 +161,9 @@ function displayQuestion(question) {
     el.textContent = mainStorySegments[i].question;
     console.log(mainStorySegments[i].question);
   } else {
-    imageEl.setAttribute('src', altStorySegments[i - 1].image);
-    el.textContent = altStorySegments[i - 1].question;
-    console.log(altStorySegments[i - 1].question);
+    imageEl.setAttribute('src', altStorySegments[i].image);
+    el.textContent = altStorySegments[i].question;
+    console.log(altStorySegments[i].question);
   }
   figureEl.appendChild(imageEl);
   sectionEl.appendChild(figureEl);
@@ -210,7 +210,6 @@ function displayAnswers(answers) {
 function handleSubmit(event) {
   console.log(event);
   event.preventDefault();
-  i++;
   var figureEl = document.getElementById('image-container');
   var answerOneEl = document.getElementById('answer0');
   var answerTwoEl = document.getElementById('answer1');
@@ -219,8 +218,9 @@ function handleSubmit(event) {
 
   if (event.target[0].checked) {
     console.log(event.target[0].textContent);
-    if (orderedAnswers[0] === mainStorySegments[i - 1].answerOne || orderedAnswers[0] === altStorySegments[i - 1].answerOne) {
+    if (orderedAnswers[0] === mainStorySegments[i].answerOne || orderedAnswers[0] === altStorySegments[i].answerOne) {
       altPath = false;
+      i++;
       var questionEl = document.getElementById('questionEl');
       var formEl = document.getElementById('answer-form');
       sectionEl.removeChild(figureEl);
@@ -236,8 +236,9 @@ function handleSubmit(event) {
         displayQuestion(mainQuestions);
         displayAnswers(mainAnswers);
       }
-    } else if (orderedAnswers[0] === mainStorySegments[i - 1].answerTwo || orderedAnswers[0] === altStorySegments[i - 1].answerTwo) {
+    } else if (orderedAnswers[0] === mainStorySegments[i].answerTwo || orderedAnswers[0] === altStorySegments[i].answerTwo) {
       altPath = true;
+      i++;
       var questionEl = document.getElementById('questionEl');
       var formEl = document.getElementById('answer-form');
       sectionEl.removeChild(figureEl);
@@ -266,8 +267,9 @@ function handleSubmit(event) {
     }
   } else if (event.target[1].checked) {
     console.log(event.target[1].textContent);
-    if (orderedAnswers[1] === mainStorySegments[i - 1].answerOne || orderedAnswers[1] === altStorySegments[i - 1].answerOne) {
+    if (orderedAnswers[1] === mainStorySegments[i].answerOne || orderedAnswers[1] === altStorySegments[i].answerOne) {
       altPath = false;
+      i++;
       var questionEl = document.getElementById('questionEl');
       var formEl = document.getElementById('answer-form');
       sectionEl.removeChild(figureEl);
@@ -283,8 +285,9 @@ function handleSubmit(event) {
         displayQuestion(mainQuestions);
         displayAnswers(mainAnswers);
       }
-    } else if (orderedAnswers[1] === mainStorySegments[i - 1].answerTwo || orderedAnswers[1] === altStorySegments[i - 1].answerTwo) {
+    } else if (orderedAnswers[1] === mainStorySegments[i].answerTwo || orderedAnswers[1] === altStorySegments[i].answerTwo) {
       altPath = true;
+      i++;
       var questionEl = document.getElementById('questionEl');
       var formEl = document.getElementById('answer-form');
       sectionEl.removeChild(figureEl);
@@ -313,8 +316,9 @@ function handleSubmit(event) {
     }
   } else if (event.target[2].checked) {
     console.log(event.target[2].textContent);
-    if (orderedAnswers[2] === mainStorySegments[i - 1].answerOne || orderedAnswers[2] === altStorySegments[i - 1].answerOne) {
+    if (orderedAnswers[2] === mainStorySegments[i].answerOne || orderedAnswers[2] === altStorySegments[i].answerOne) {
       altPath = false;
+      i++;
       var questionEl = document.getElementById('questionEl');
       var formEl = document.getElementById('answer-form');
       sectionEl.removeChild(figureEl);
@@ -330,8 +334,9 @@ function handleSubmit(event) {
         displayQuestion(mainQuestions);
         displayAnswers(mainAnswers);
       }
-    } else if (orderedAnswers[2] === mainStorySegments[i - 1].answerTwo || orderedAnswers[2] === altStorySegments[i - 1].answerTwo) {
+    } else if (orderedAnswers[2] === mainStorySegments[i].answerTwo || orderedAnswers[2] === altStorySegments[i].answerTwo) {
       altPath = true;
+      i++;
       var questionEl = document.getElementById('questionEl');
       var formEl = document.getElementById('answer-form');
       sectionEl.removeChild(figureEl);
