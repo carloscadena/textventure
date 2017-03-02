@@ -78,7 +78,7 @@ var chartData = {
     datasets: [{
       label: 'High Scores',
       data: allThePoints,
-      backgroundColor: 'lime'
+      backgroundColor: 'darkblue'
     }],
   },
   options: {
@@ -86,14 +86,14 @@ var chartData = {
       yAxes: [{
         ticks: {
           fontSize: 24,
-          fontColor: 'lime',
+          fontColor: 'blue',
           beginAtZero: true
         }
       }],
       xAxes: [{
         ticks: {
           fontSize: 24,
-          fontColor: 'lime',
+          fontColor: 'blue',
           beginAtZero: true
         }
       }]
