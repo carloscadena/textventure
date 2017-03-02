@@ -13,6 +13,8 @@ var mainAnswers = [
     ['You sign a 6 month contract and drink a few bottles of Sake to life, health, and prosperity.', 'Something is rotten in the state of coding Silicon Valley is in desperate need of young talent willing to throw themselves into a startup and you choose to join the fray!', 'You reject the contract and join some hipster burning man tribe that drives an eco bus around the world and builds sustainable housing for indigenous locals.'],
     ['Start an american themed club/cafe', 'You eat massive quantities of food and start training to become a sumo Wrestler.', 'You go back to Safe, USA!']];
 
+var mainImagePaths = ['img/swissMountains.jpg', 'img/Swiss.jpg', 'img/swissMountains.jpg', 'img/daryan-shamkali-133233.jpg', 'img/tycho-atsma-181053.jpg'];
+
 var altQuestions = ['You\’ve ended up surfing in Australia! Funny how those little ideas grow. Are you ready to go get a coding job or get lost somewhere else?',
   'You decide to travel to Switzerland and are met by a customs official who glares at you and asks, \"What is your business in Switzerland!?\"',
   'PhewWWf! The customs officer seemed to be in a good mood and lets you in. Your visit in Switzerland was awesome, but now you’ve decided to do some work.',
@@ -24,9 +26,7 @@ var altAnswers = [
   ['A company in Japan is hiring.', 'A local startup is hiring, you’re not quite sure what for but hey, what could go wrong?', 'Yacht mate, I can use my coding skills to entice a rich yacht owner to hire me on to cruise the med and do his busy work.'],
   ['Work hard and make it to the top of the food chain at the company.', 'Quit and try your luck as a serial entrepreneur.', 'Decide coding is not for you and fall back on your previous career.']];
 
-var mainImagePaths = ['img/swissMountains.jpg', 'img/Swiss.jpg', 'img/swissMountains.jpg', 'img/Carlos.jpg', 'img/Carlos.jpg'];
-
-var altImagePaths = ['img/Kangaroo.jpg', 'img/GOT.jpg', 'img/bridge.jpg', 'img/Carlos.jpg'];
+var altImagePaths = ['img/Kangaroo.jpg', 'img/GOT.jpg', 'img/bridge.jpg', 'img/breather-187939.jpg'];
 
 var sectionEl = document.getElementById('game-content');
 
