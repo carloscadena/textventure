@@ -24,7 +24,7 @@ var altAnswers = [
   ['A company in Japan is hiring.', 'A local startup is hiring, you’re not quite sure what for but hey, what could go wrong?', 'Yacht mate, I can use my coding skills to entice a rich yacht owner to hire me on to cruise the med and do his busy work.'],
   ['Work hard and make it to the top of the food chain at the company.', 'Quit and try your luck as a serial entrepreneur.', 'Decide coding is not for you and fall back on your previous career.']];
 
-var mainImagePaths = ['img/surfGirl.jpg', 'img/Swiss.jpg', 'img/swissMountains.jpg', 'img/Carlos.jpg', 'img/Carlos.jpg'];
+var mainImagePaths = ['img/swissMountains.jpg', 'img/Swiss.jpg', 'img/swissMountains.jpg', 'img/Carlos.jpg', 'img/Carlos.jpg'];
 
 var altImagePaths = ['img/Kangaroo.jpg', 'img/GOT.jpg', 'img/bridge.jpg', 'img/Carlos.jpg'];
 
@@ -41,71 +41,71 @@ function StorySegment(question, answers, imagePath, pointValue) {
 };
 
 //FUNCTION DECLARATIONS
-function sortAnswers(answers) {
+function sortAnswers() {
   var newAnswers = [];
   var randNum = Math.floor((Math.random() * 6) + 1);
   if (!altPath) {
     if (randNum === 1) {
-      newAnswers.push(answers[i][0]);
-      newAnswers.push(answers[i][1]);
-      newAnswers.push(answers[i][2]);
+      newAnswers.push(mainStorySegments[i].answerOne);
+      newAnswers.push(mainStorySegments[i].answerTwo);
+      newAnswers.push(mainStorySegments[i].answerThree);
     } else if (randNum === 2) {
-      newAnswers.push(answers[i][0]);
-      newAnswers.push(answers[i][2]);
-      newAnswers.push(answers[i][1]);
+      newAnswers.push(mainStorySegments[i].answerOne);
+      newAnswers.push(mainStorySegments[i].answerThree);
+      newAnswers.push(mainStorySegments[i].answerTwo);
     } else if (randNum === 3) {
-      newAnswers.push(answers[i][1]);
-      newAnswers.push(answers[i][0]);
-      newAnswers.push(answers[i][2]);
+      newAnswers.push(mainStorySegments[i].answerTwo);
+      newAnswers.push(mainStorySegments[i].answerOne);
+      newAnswers.push(mainStorySegments[i].answerThree);
     } else if (randNum === 4) {
-      newAnswers.push(answers[i][1]);
-      newAnswers.push(answers[i][2]);
-      newAnswers.push(answers[i][0]);
+      newAnswers.push(mainStorySegments[i].answerTwo);
+      newAnswers.push(mainStorySegments[i].answerThree);
+      newAnswers.push(mainStorySegments[i].answerOne);
     } else if (randNum === 5) {
-      newAnswers.push(answers[i][2]);
-      newAnswers.push(answers[i][0]);
-      newAnswers.push(answers[i][1]);
+      newAnswers.push(mainStorySegments[i].answerThree);
+      newAnswers.push(mainStorySegments[i].answerOne);
+      newAnswers.push(mainStorySegments[i].answerTwo);
     } else {
-      newAnswers.push(answers[i][2]);
-      newAnswers.push(answers[i][1]);
-      newAnswers.push(answers[i][0]);
+      newAnswers.push(mainStorySegments[i].answerThree);
+      newAnswers.push(mainStorySegments[i].answerTwo);
+      newAnswers.push(mainStorySegments[i].answerOne);
     }
   } else {
     if (randNum === 1) {
-      newAnswers.push(answers[i - 1][0]);
-      newAnswers.push(answers[i - 1][1]);
-      newAnswers.push(answers[i - 1][2]);
+      newAnswers.push(altStorySegments[i - 1].answerOne);
+      newAnswers.push(altStorySegments[i - 1].answerTwo);
+      newAnswers.push(altStorySegments[i - 1].answerThree);
     } else if (randNum === 2) {
-      newAnswers.push(answers[i - 1][0]);
-      newAnswers.push(answers[i - 1][2]);
-      newAnswers.push(answers[i - 1][1]);
+      newAnswers.push(altStorySegments[i - 1].answerOne);
+      newAnswers.push(altStorySegments[i - 1].answerThree);
+      newAnswers.push(altStorySegments[i - 1].answerTwo);
     } else if (randNum === 3) {
-      newAnswers.push(answers[i - 1][1]);
-      newAnswers.push(answers[i - 1][0]);
-      newAnswers.push(answers[i - 1][2]);
+      newAnswers.push(altStorySegments[i - 1].answerTwo);
+      newAnswers.push(altStorySegments[i - 1].answerOne);
+      newAnswers.push(altStorySegments[i - 1].answerThree);
     } else if (randNum === 4) {
-      newAnswers.push(answers[i - 1][1]);
-      newAnswers.push(answers[i - 1][2]);
-      newAnswers.push(answers[i - 1][0]);
+      newAnswers.push(altStorySegments[i - 1].answerTwo);
+      newAnswers.push(altStorySegments[i - 1].answerThree);
+      newAnswers.push(altStorySegments[i - 1].answerOne);
     } else if (randNum === 5) {
-      newAnswers.push(answers[i - 1][2]);
-      newAnswers.push(answers[i - 1][0]);
-      newAnswers.push(answers[i - 1][1]);
+      newAnswers.push(altStorySegments[i - 1].answerThree);
+      newAnswers.push(altStorySegments[i - 1].answerOne);
+      newAnswers.push(altStorySegments[i - 1].answerTwo);
     } else {
-      newAnswers.push(answers[i - 1][2]);
-      newAnswers.push(answers[i - 1][1]);
-      newAnswers.push(answers[i - 1][0]);
+      newAnswers.push(altStorySegments[i - 1].answerThree);
+      newAnswers.push(altStorySegments[i - 1].answerTwo);
+      newAnswers.push(altStorySegments[i - 1].answerOne);
     }
   }
 
   return newAnswers;
 };
 
-function createLabelElement(answers, j) {
-  var labelEl = document.createElement('label');
-  labelEl.setAttribute('for', 'answer' + j);
-  labelEl.textContent = orderedAnswers[j];
-  return labelEl;
+function createLabelElement(j) {
+  var label = document.createElement('label');
+  label.setAttribute('for', 'answer' + j);
+  label.textContent = orderedAnswers[j];
+  return label;
 };
 
 function createInputElement(j) {
@@ -176,9 +176,9 @@ function displayAnswers(answers) {
 
   if (!altPath) {
     orderedAnswers = [];
-    orderedAnswers = sortAnswers(mainAnswers);
+    orderedAnswers = sortAnswers();
     for (var j = 0; j < orderedAnswers.length; j++) {
-      var labelEl = createLabelElement(orderedAnswers, j);
+      var labelEl = createLabelElement(j);
       var inputEl = createInputElement(j);
 
       formEl.appendChild(labelEl);
@@ -186,9 +186,9 @@ function displayAnswers(answers) {
     }
   } else {
     orderedAnswers = [];
-    orderedAnswers = sortAnswers(altAnswers);
+    orderedAnswers = sortAnswers();
     for (var j = 0; j < orderedAnswers.length; j++) {
-      var labelEl = createLabelElement(orderedAnswers, j);
+      var labelEl = createLabelElement(j);
       var inputEl = createInputElement(j);
 
       formEl.appendChild(labelEl);
@@ -374,6 +374,6 @@ console.log(altStorySegments);
 
 var User = JSON.parse(localStorage.user);
 
-var orderedAnswers = sortAnswers(mainAnswers);
+var orderedAnswers = sortAnswers();
 displayQuestion(mainQuestions);
 displayAnswers(mainAnswers);
