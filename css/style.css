@@ -147,6 +147,7 @@ div h2 {
 }
 
 #question-image {
+  display: block;
   width: 700px;
   height: 500px;
 
@@ -178,15 +179,4 @@ div h2 {
   height: 70%;
   margin: 0 auto;
   opacity: 0.9;
-}
-#game-content{
-  display: inline-block;
-  margin: auto;
-
-}
-
-
-#image-container{
-  display: inline-block;
-  margin: auto;
 }
