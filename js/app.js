@@ -31,13 +31,12 @@ var altImagePaths = ['img/Kangaroo.jpg', 'img/GOT.jpg', 'img/bridge.jpg', 'img/C
 var sectionEl = document.getElementById('game-content');
 
 //CONSTRUCTOR FUNCTION
-function StorySegment(question, answers, imagePath, pointValue) {
+function StorySegment(question, answers, imagePath) {
   this.question = question;
   this.answerOne = answers[0];
   this.answerTwo = answers[1];
   this.answerThree = answers[2];
   this.image = imagePath;
-  this.points = pointValue;
 };
 
 //FUNCTION DECLARATIONS
@@ -120,7 +119,7 @@ function createInputElement(j) {
 function createMainStorySegments() {
   var mainSegments = [];
   for (var i = 0; i < mainQuestions.length; i++) {
-    mainSegments.push(new StorySegment(mainQuestions[i], mainAnswers[i], mainImagePaths[i], 10));
+    mainSegments.push(new StorySegment(mainQuestions[i], mainAnswers[i], mainImagePaths[i]));
   }
   return mainSegments;
 };
@@ -128,7 +127,7 @@ function createMainStorySegments() {
 function createAltStorySegments() {
   var altSegments = [''];
   for (var i = 0; i < altQuestions.length; i++) {
-    altSegments.push(new StorySegment(altQuestions[i], altAnswers[i], altImagePaths[i], 5));
+    altSegments.push(new StorySegment(altQuestions[i], altAnswers[i], altImagePaths[i]));
   }
   return altSegments;
 };
@@ -178,21 +177,27 @@ function displayAnswers(answers) {
     orderedAnswers = [];
     orderedAnswers = sortAnswers();
     for (var j = 0; j < orderedAnswers.length; j++) {
+      var divEl = document.createElement('div');
+      divEl.setAttribute('class', 'answers');
       var labelEl = createLabelElement(j);
       var inputEl = createInputElement(j);
 
-      formEl.appendChild(labelEl);
-      formEl.appendChild(inputEl);
+      divEl.appendChild(labelEl);
+      divEl.appendChild(inputEl);
+      formEl.appendChild(divEl);
     }
   } else {
     orderedAnswers = [];
     orderedAnswers = sortAnswers();
     for (var j = 0; j < orderedAnswers.length; j++) {
+      var divEl = document.createElement('div');
+      divEl.setAttribute('class', 'answers');
       var labelEl = createLabelElement(j);
       var inputEl = createInputElement(j);
 
-      formEl.appendChild(labelEl);
-      formEl.appendChild(inputEl);
+      divEl.appendChild(labelEl);
+      divEl.appendChild(inputEl);
+      formEl.appendChild(divEl);
     }
   }
 
