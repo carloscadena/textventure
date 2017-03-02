@@ -1,104 +1,185 @@
 *{
   font-family: Arial, Verdana, sans-serif;
-  color: #665544;
   text-align: center;
 }
 
-html {
-  text-align: center;
-}
 body {
-  width:1060px;
-  height:1000px;
   margin: 0 auto;
+  background-image: url("../img/annie-spratt-7928.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 #content {
   overflow: auto;
   height: 100%
 }
+
 #feature, #footer {
   background-color: white;
-  padding:40px;
-  margin:40px;
   border:solid;
 }
 
 #Login, #main-table {
-  position: relative;
-  float:right;
 }
 
 #nav{
-  height: 10px;
   background-color: white;
-  padding:40px;
-  margin:10px;
-  border:solid;
+  padding: 10px;
+  margin: 5px;
+  border: solid;
+  line-height: 10px;
+}
+
+.logo {
+  display: inline-block;
+  float: left;
+  width: 75px;
+  height: 75px;
+  margin-top: 30px;
+  margin-left: 40px;
+}
+
+#main-title {
+  color: black;
+  font-family: 'VT323', monospace;
+  text-align: center;
+  margin: 10px;
+  font-size: 100px;
+  display: inline-block;
 }
 
 li{
   display: inline;
-  padding: 40px;
+  padding: 20px;
+  width: 20%;
 }
 
-#header{
+#header {
   border: solid;
-  background-position: center;
   background-color: #efefef;
   width:90%;
+  margin: auto;
+  margin-top: 30px;
+  opacity: 0.9;
 }
 
-h1{
-  text-align: left;
+h1 {
   color: navy;
   position: relative;
 }
 
-#footer{
-  padding:40px;
+#footer {
+  padding:5px;
   background-color: white;
   border: solid;
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+fieldset {
+  float: right;
+  display: inline-block;
+  margin-top: 30px;
+  margin-right: 10px;
+}
+
+.text-box {
+  background-color: white;
+  opacity: 0.9;
+  margin: auto;
+  width: 90%;
+  margin-bottom: 20px;
+}
+
+.team-members {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.ben {
+  display: inline-block;
+  width: 22%;
+  margin: 0 auto;
+}
+
+.carlos {
+  display: inline-block;
+  width: 22%;
+  margin: 0 auto;
+}
+
+.cameron {
+  display: inline-block;
+  width: 22%;
+  margin: 0 auto;
+}
+
+.james {
+  display: inline-block;
+  width: 22%;
+  margin: 0 auto;
+}
+
+#text-dragon {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  opacity: 0.9;
 }
 
 .profile-photo {
-  width: 35%;
+  width: 250px;
+  height: 300px;
+  opacity: 1;
 }
 
-/*body{*/
-
-  /*width: 960px;
-  margin: 0 auto;}
-
-
-  #Content {overflow: auto;
-  height: 100%inherit;}
-  #nav, #Feature, #footer {
-
-    margin-top:: 20px
-padding:inherit; 10px 0px 5px 0px;*/
-/*background-color: #efefef; }*/
-
-.column3, .column2, .column3 {
-  margin: 30px;
-  width: 600px;
-  float: ;
-  padding:40px;
-  border: solid;
+div h2 {
+  font-style: italic;
 }
 
-/*}
-li {
-display: inline;
-  padding: 5px;
-  background-color: #efefef;
+#question-image {
+  display: block;
+  width: 700px;
+  height: 500px;
+
+#highscore {
+  margin-top: 10px;
+  margin-bottom: 0px;
 }
 
-#nav, #footer {
-  background-color: #efefef;
-  display: inline-block;
-  padding: 0.5em 0;}
-  #Feature, .article {
-  height: 100px;
+#gameover {
+  font-family: 'VT323', monospace;
+  color: #bf2030;
+  height: 135px;
+  font-size: 125px;
+  margin: auto;
+  margin-top: 10px;
+  background-color: white;
+  opacity: 0.9;
+  width: 90%;
+}
 
-}*/
+.chart-wrapper {
+  width: 95%;
+  background-color: white;
+  color: white;
+}
+
+#high-scores-graph {
+  max-width: 70%;
+  height: 70%;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+#game-content{
+  display:inline-block;
+}
