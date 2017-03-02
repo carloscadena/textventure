@@ -76,6 +76,33 @@ h1 {
   position: relative;
 }
 
+#questionEl {
+  font-size: 24pt;
+}
+
+.answers {
+  margin: 2% auto;
+  text-align: right;
+  display: block;
+}
+
+.answers input {
+  margin-left: 20%;
+  float: right;
+}
+
+.answers label {
+  text-align: left;
+  display: inline-block;
+  max-widith: 40%;
+  margin-right: 10%;
+}
+
+#answer-form {
+  width: 50%;
+  margin: 0 auto;
+}
+
 #footer {
   padding:5px;
   background-color: white;
@@ -182,7 +209,6 @@ div h2 {
 #game-content{
   display: inline-block;
   margin: auto;
-
 }
 
 
