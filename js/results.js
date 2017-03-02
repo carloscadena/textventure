@@ -7,10 +7,10 @@ function DevScore (user, points) {
   this.points = points;
 };
 
-var ben = new DevScore('Ben', -5);
-var james = new DevScore('James', 45);
-var cameron = new DevScore('Cameron', 15);
-var carlos = new DevScore('Carlos', 25);
+var ben = new DevScore('Ben', 40);
+var james = new DevScore('James', 30);
+var cameron = new DevScore('Cameron', 50);
+var carlos = new DevScore('Carlos', 35);
 
 var scores = [ben, james, cameron, carlos];
 
