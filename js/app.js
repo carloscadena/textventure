@@ -9,8 +9,8 @@ var mainQuestions = ['Do you want to learn to surf?',
 var mainAnswers = [
     ['No thank you.', 'Heck yea! Let me go grab my wetsuit and board.', 'No way! Surfing is for hippies. I\'m a programmer!'],
     ['I don\’t know how to dance.', 'I\’d rather go explore Switzerland!', 'Dance like the world is ending!'],
-    ['You\’ll hit Burning man up, but that’s about as much adventure as you want in life right now..', 'Switzerland sounds like a plan if I can make it past their customs officials!', 'I\’m going to play it safe and go back to my desk job!'],
-    ['You sign a 6 month contract and drink a few bottles of Sake to life, health, and prosperity.', 'Something is rotten in the state of coding” Silicon Valley is in desperate need of young talent willing to throw themselves into a startup and you choose to join the fray!', 'You reject the contract and join some hipster burning man tribe that drives an eco bus around the world and builds sustainable housing for indigenous locals.'],
+    ['You\’ll hit Burning man up, but that’s about as much adventure as you want in life right now.', 'Switzerland sounds like a plan if I can make it past their customs officials!', 'I\’m going to play it safe and go back to my desk job!'],
+    ['You sign a 6 month contract and drink a few bottles of Sake to life, health, and prosperity.', 'Something is rotten in the state of coding Silicon Valley is in desperate need of young talent willing to throw themselves into a startup and you choose to join the fray!', 'You reject the contract and join some hipster burning man tribe that drives an eco bus around the world and builds sustainable housing for indigenous locals.'],
     ['Start an american themed club/cafe', 'You eat massive quantities of food and start training to become a sumo Wrestler.', 'You go back to Safe, USA!']];
 
 var altQuestions = ['You\’ve ended up surfing in Australia! Funny how those little ideas grow. Are you ready to go get a coding job or get lost somewhere else?',
@@ -20,13 +20,13 @@ var altQuestions = ['You\’ve ended up surfing in Australia! Funny how those li
 
 var altAnswers = [
   ['Some of your new surfing bro\’s are heading to burning man in the summer, go with them.', 'I hear the Swiss Alps calling!', 'Vous parlez francais?'],
-  ['I don\’t have to deal with this guy, i can still meet up the Surfers at burning man.', 'I want to see your beautiful countryside.', 'My buisiness is my business, i don\'t have to tell you!'],
+  ['I don\’t have to deal with this guy, i can still meet up the Surfers at burning man.', 'I want to see your beautiful countryside.', 'My business is my business, i don\'t have to tell you!'],
   ['A company in Japan is hiring.', 'A local startup is hiring, you’re not quite sure what for but hey, what could go wrong?', 'Yacht mate, I can use my coding skills to entice a rich yacht owner to hire me on to cruise the med and do his busy work.'],
   ['Work hard and make it to the top of the food chain at the company.', 'Quit and try your luck as a serial entrepreneur.', 'Decide coding is not for you and fall back on your previous career.']];
 
 var mainImagePaths = ['img/surfGirl.jpg', 'img/Swiss.jpg', 'img/swissMountains.jpg', 'img/Carlos.jpg', 'img/Carlos.jpg'];
 
-var altImagePaths = ['img/Kangaroo.jpg', 'img/GOT.jpg', 'img/bridge.jpg', 'img/Carlos.jpg', 'img/Carlos.jpg'];
+var altImagePaths = ['img/Kangaroo.jpg', 'img/GOT.jpg', 'img/bridge.jpg', 'img/Carlos.jpg'];
 
 var sectionEl = document.getElementById('game-content');
 
@@ -40,40 +40,64 @@ function StorySegment(question, answers, imagePath, pointValue) {
   this.points = pointValue;
 };
 
-var i = 0;
-var altPath = false;
-
-var questionLimit = mainQuestions.length;
-
+//FUNCTION DECLARATIONS
 function sortAnswers(answers) {
   var newAnswers = [];
   var randNum = Math.floor((Math.random() * 6) + 1);
-
-  if (randNum === 1) {
-    newAnswers.push(answers[i][0]);
-    newAnswers.push(answers[i][1]);
-    newAnswers.push(answers[i][2]);
-  } else if (randNum === 2) {
-    newAnswers.push(answers[i][0]);
-    newAnswers.push(answers[i][2]);
-    newAnswers.push(answers[i][1]);
-  } else if (randNum === 3) {
-    newAnswers.push(answers[i][1]);
-    newAnswers.push(answers[i][0]);
-    newAnswers.push(answers[i][2]);
-  } else if (randNum === 4) {
-    newAnswers.push(answers[i][1]);
-    newAnswers.push(answers[i][2]);
-    newAnswers.push(answers[i][0]);
-  } else if (randNum === 5) {
-    newAnswers.push(answers[i][2]);
-    newAnswers.push(answers[i][0]);
-    newAnswers.push(answers[i][1]);
+  if (!altPath) {
+    if (randNum === 1) {
+      newAnswers.push(answers[i][0]);
+      newAnswers.push(answers[i][1]);
+      newAnswers.push(answers[i][2]);
+    } else if (randNum === 2) {
+      newAnswers.push(answers[i][0]);
+      newAnswers.push(answers[i][2]);
+      newAnswers.push(answers[i][1]);
+    } else if (randNum === 3) {
+      newAnswers.push(answers[i][1]);
+      newAnswers.push(answers[i][0]);
+      newAnswers.push(answers[i][2]);
+    } else if (randNum === 4) {
+      newAnswers.push(answers[i][1]);
+      newAnswers.push(answers[i][2]);
+      newAnswers.push(answers[i][0]);
+    } else if (randNum === 5) {
+      newAnswers.push(answers[i][2]);
+      newAnswers.push(answers[i][0]);
+      newAnswers.push(answers[i][1]);
+    } else {
+      newAnswers.push(answers[i][2]);
+      newAnswers.push(answers[i][1]);
+      newAnswers.push(answers[i][0]);
+    }
   } else {
-    newAnswers.push(answers[i][2]);
-    newAnswers.push(answers[i][1]);
-    newAnswers.push(answers[i][0]);
+    if (randNum === 1) {
+      newAnswers.push(answers[i - 1][0]);
+      newAnswers.push(answers[i - 1][1]);
+      newAnswers.push(answers[i - 1][2]);
+    } else if (randNum === 2) {
+      newAnswers.push(answers[i - 1][0]);
+      newAnswers.push(answers[i - 1][2]);
+      newAnswers.push(answers[i - 1][1]);
+    } else if (randNum === 3) {
+      newAnswers.push(answers[i - 1][1]);
+      newAnswers.push(answers[i - 1][0]);
+      newAnswers.push(answers[i - 1][2]);
+    } else if (randNum === 4) {
+      newAnswers.push(answers[i - 1][1]);
+      newAnswers.push(answers[i - 1][2]);
+      newAnswers.push(answers[i - 1][0]);
+    } else if (randNum === 5) {
+      newAnswers.push(answers[i - 1][2]);
+      newAnswers.push(answers[i - 1][0]);
+      newAnswers.push(answers[i - 1][1]);
+    } else {
+      newAnswers.push(answers[i - 1][2]);
+      newAnswers.push(answers[i - 1][1]);
+      newAnswers.push(answers[i - 1][0]);
+    }
   }
+
   return newAnswers;
 };
 
@@ -164,7 +188,7 @@ function displayAnswers(answers) {
     orderedAnswers = [];
     orderedAnswers = sortAnswers(altAnswers);
     for (var j = 0; j < orderedAnswers.length; j++) {
-      var labelEl = createLabelElement(answers, j);
+      var labelEl = createLabelElement(orderedAnswers, j);
       var inputEl = createInputElement(j);
 
       formEl.appendChild(labelEl);
@@ -338,6 +362,10 @@ function handleSubmit(event) {
 };
 
 //------------------TEST APPLICATION------------------
+var i = 0;
+var altPath = false;
+var questionLimit = mainQuestions.length;
+
 var mainStorySegments = createMainStorySegments();
 console.log(mainStorySegments);
 
