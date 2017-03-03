@@ -56,10 +56,17 @@ body {
   display: inline-block;
 }
 
-li{
+li {
   display: inline;
   padding: 20px;
   width: 20%;
+}
+
+a {
+  color: darkgreen;
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
 }
 
 #header {
@@ -192,6 +199,11 @@ div h2 {
   background-color: white;
   opacity: 0.9;
   width: 90%;
+}
+
+#game-over-message {
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .chart-wrapper {
