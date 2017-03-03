@@ -93,16 +93,30 @@ h1 {
   display: block;
 }
 
+#victory-message {
+  font-size: 32px;
+  font-family: 'VT323', monospace;
+}
+
+#game-over-message {
+  font-size: 32px;
+  font-family: 'VT323', monospace;
+}
+
 .answers input {
-  margin-left: 20%;
+  margin-left: 10%;
+  margin-right: 5%;
+  margin-bottom: 2%;
   float: right;
+  clear: none;
 }
 
 .answers label {
   text-align: left;
   display: inline-block;
-  max-widith: 40%;
   margin-right: 10%;
+  margin-bottom: 2%;
+  margin-left: 0;
 }
 
 #answer-form {
@@ -111,7 +125,7 @@ h1 {
 }
 
 #footer {
-  padding:5px;
+  padding: 5px;
   background-color: white;
   border: solid;
   width: 90%;

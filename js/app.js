@@ -1,27 +1,27 @@
 'use strict';
 
-var mainQuestions = ['You find yourself in a galaxy far far away on the planet Tatooine, how would you like to begin.',
+var mainQuestions = ['You find yourself in a galaxy far, far away on the planet Tatooine, how would you like to begin.',
   'As you approach the race track, you find a variety of shops.',
   'You bump into an angry bounty hunter, he offers you 2 options.',
-  'You find yourself inisde of a Pod Racer\'s garage, the Pod Racer looks like complete shit. Things are broken and scattered everywhere.',
-  'A group of refugees is passing by headed for a transport ship headed off world.'];
+  'You find yourself inside of a Pod Racer\'s garage, the Pod Racer looks completely run down. Things are broken and scattered everywhere.',
+  'A group of refugees is passing by heading to a transport ship headed off world.'];
 
 var mainAnswers = [
     ['Go see a pod race.', 'Go to Jabba the Hut\'s palace.', 'Find Obi-wan Kenobi.'],
-    ['Go checkout the Bazzar', 'You ask a seeming harmless man for directions to the best hangout on Tatooine.', 'Engage in combat with a Jawa.'],
+    ['Go checkout the Bazaar', 'You ask a seemingly harmless man for directions to the best hangout in Tatooine.', 'Engage in combat with a Jawa.'],
     ['Enter in a Pod Race.', 'Go with him to Jabba\'s khetanna.', 'Try and get away.'],
     ['Back out of the race and live.', 'Take it for a test run.', 'Trust your gut and go anyway.'],
     ['Try and blend in and follow the group.', 'Gandalf is looking for someone to join him on an adventure.', 'Someone named Tyrion Lanister is looking for some help.']];
 
 var mainImagePaths = ['img/not_far_from_tatooine_by_vidom-d5w60an.jpg', 'img/aurum_bazaar_by_dudelitda-d7pcsn2.jpg', 'img/star_wars_boba_fett_by_jamga.jpg', 'img/pod_racer_by_cesarsampedro.jpg', 'img/at_at_transport_by_1oshuart-daiifvc.jpg'];
 
-var altQuestions = ['At the entrace to Jabba\'s Palace and angry pig man guards the door.',
-  'Inside Jabba\'s Palace a varitey of people are standing around drinking.', 'Jabba doesn\'t like stowaways so he gives you and ultimatum.',
-  'You wander in the desert, dehydrated and cold. What do you do.'];
+var altQuestions = ['At the entrance to Jabba\'s Palace an angry pig man guards the door.',
+  'Inside Jabba\'s Palace a variety of people are standing around drinking.', 'Jabba doesn\'t like stowaways so he gives you an ultimatum.',
+  'You wander in the desert, dehydrated and cold. What do you do?'];
 
 var altAnswers = [
-  ['Follow a stanger in Mandalorian Armor.', 'Bribe the guard.', 'Wave your hand infront of the guards face and say \"You will let me into the club\"'],
-  ['A shifty mechanic has a Pod Racing propisition for you.', 'Go with the group headded to Jabba\'s khetanna.', 'Check out the cool animals.'],
+  ['Follow a stanger in Mandalorian Armor.', 'Bribe the guard.', 'Wave your hand in front of the guard\'s face and say \"You will let me into the club\"'],
+  ['A shifty mechanic has a Pod Racing proposition for you.', 'Go with the group headed to Jabba\'s khetanna.', 'Check out the cool animals.'],
   ['Steal a sand speeder and head to Mos Eisley.', 'Jump off and try to run.', 'Wear a golden bikini for the rest of your life.'],
   ['Become one with the force.', 'Pull out your communicator and tell Scotty to beam you up.', 'Follow the shimmering Oasis.']];
 
@@ -143,7 +143,7 @@ function displayGameOver() {
   var sectionEl = document.getElementById('game-content');
   var messageEl = document.createElement('p');
   messageEl.setAttribute('id', 'game-over-message');
-  messageEl.textContent = 'We are very sorry, but you lose, good day sir and/or madam.  Good Day.';
+  messageEl.textContent = 'We are very sorry, but it appears the last choice you made killed you. Click the \'Play\' link to play again, or click \'Results\' to see how you did compared to the other players.';
   sectionEl.appendChild(messageEl);
 };
 
