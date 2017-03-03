@@ -144,7 +144,7 @@ function displayGameOver() {
   var sectionEl = document.getElementById('game-content');
   var messageEl = document.createElement('p');
   messageEl.setAttribute('id', 'game-over-message');
-  messageEl.textContent = 'I\'m very sorry, it appears that the last choice you made killed you.';
+  messageEl.textContent = 'We are very sorry, but you lose, good day sir and/or madam.  Good Day.';
   sectionEl.appendChild(messageEl);
 };
 
