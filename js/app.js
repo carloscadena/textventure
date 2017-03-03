@@ -4,7 +4,7 @@ var mainQuestions = ['You find yourself in a galaxy far far away on the planet T
   'As you approach the race track, you find a variety of shops.',
   'You bump into an angry bounty hunter, he offers you 2 options.',
   'You find yourself inisde of a Pod Racer\'s garage, the Pod Racer looks like complete shit. Things are broken and scattered everywhere.',
-  'A group of refugees is passing by headded for a transport ship headded offworld.'];
+  'A group of refugees is passing by headed for a transport ship headed off world.'];
 
 var mainAnswers = [
     ['Go see a pod race.', 'Go to Jabba the Hut\'s palace.', 'Find Obi-wan Kenobi.'],
@@ -13,7 +13,7 @@ var mainAnswers = [
     ['Back out of the race and live.', 'Take it for a test run.', 'Trust your gut and go anyway.'],
     ['Try and blend in and follow the group.', 'Gandalf is looking for someone to join him on an adventure.', 'Someone named Tyrion Lanister is looking for some help.']];
 
-var mainImagePaths = ['img/surfGirl.jpg', 'img/Swiss.jpg', 'img/swissMountains.jpg', 'img/daryan-shamkali-133233.jpg', 'img/tycho-atsma-181053.jpg'];
+var mainImagePaths = ['/Users/carloscadena/CodeFellows/201/textventure/img/not_far_from_tatooine_by_vidom-d5w60an.jpg', 'img/aurum_bazaar_by_dudelitda-d7pcsn2.jpg.jpg', 'img/star_wars_boba_fett_by_jamga.jpg', 'img/pod_racer_by_cesarsampedro.jpg', 'img/at_at_transport_by_1oshuart-daiifvc.jpg'];
 
 var altQuestions = ['At the entrace to Jabba\'s Palace and angry pig man guards the door.',
   'Inside Jabba\'s Palace a varitey of people are standing around drinking.', 'Jabba doesn\'t like stowaways so he gives you and ultimatum.',
@@ -25,7 +25,7 @@ var altAnswers = [
   ['Steal a sand speeder and head to Mos Eisley.', 'Jump off and try to run.', 'Wear a golden bikini for the rest of your life.'],
   ['Become one with the force.', 'Pull out your communicator and tell Scotty to beam you up.', 'Follow the shimmering Oasis.']];
 
-var altImagePaths = ['img/Kangaroo.jpg', 'img/GOT.jpg', 'img/bridge.jpg', 'img/breather-187939.jpg'];
+var altImagePaths = ['img/jabba_s_palace___tatooine_by_cylonka-d59ftyi.jpg', 'img/escape_from_jabba_s_palace_by_jonhrubesch-dah50ne.jpg', 'img/jabba_the_hutt_by_faxtar-d8ac082.jpg', 'img/tatooine_by_cordobezweee-d8hrzz9.jpg'];
 
 var sectionEl = document.getElementById('game-content');
 
