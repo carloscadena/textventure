@@ -13,7 +13,7 @@ var mainAnswers = [
     ['Back out of the race and live.', 'Take it for a test run.', 'Trust your gut and go anyway.'],
     ['Try and blend in and follow the group.', 'Gandalf is looking for someone to join him on an adventure.', 'Someone named Tyrion Lanister is looking for some help.']];
 
-var mainImagePaths = ['/Users/carloscadena/CodeFellows/201/textventure/img/not_far_from_tatooine_by_vidom-d5w60an.jpg', 'img/aurum_bazaar_by_dudelitda-d7pcsn2.jpg.jpg', 'img/star_wars_boba_fett_by_jamga.jpg', 'img/pod_racer_by_cesarsampedro.jpg', 'img/at_at_transport_by_1oshuart-daiifvc.jpg'];
+var mainImagePaths = ['img/not_far_from_tatooine_by_vidom-d5w60an.jpg', 'img/aurum_bazaar_by_dudelitda-d7pcsn2.jpg', 'img/star_wars_boba_fett_by_jamga.jpg', 'img/pod_racer_by_cesarsampedro.jpg', 'img/at_at_transport_by_1oshuart-daiifvc.jpg'];
 
 var altQuestions = ['At the entrace to Jabba\'s Palace and angry pig man guards the door.',
   'Inside Jabba\'s Palace a varitey of people are standing around drinking.', 'Jabba doesn\'t like stowaways so he gives you and ultimatum.',
