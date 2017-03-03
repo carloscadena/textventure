@@ -1,30 +1,29 @@
 'use strict';
 
-var mainQuestions = ['Do you want to learn to surf?',
-  'How about some Salsa dancing?',
-  'You don’t need to dance or surf to enjoy Burning Man in Nevada! Are you going this summer?',
-  'You had a Crazy week at Burning Man, in fact, you can hardly remember what happened. you do remember you have bills to pay and you code a resume that gets you hired on at a Japanese Teach English as a foreign language school!',
-  'Japan is the shit! Problem is when your contract runs out the company doesn’t want to rehire you. What now?'];
+var mainQuestions = ['You find yourself in a galaxy far far away on the planet Tatooine, how would you like to begin.',
+  'As you approach the race track, you find a variety of shops.',
+  'You bump into an angry bounty hunter, he offers you 2 options.',
+  'You find yourself inisde of a Pod Racer\'s garage, the Pod Racer looks like complete shit. Things are broken and scattered everywhere.',
+  'A group of refugees is passing by headded for a transport ship headded offworld.'];
 
 var mainAnswers = [
-    ['No thank you.', 'Heck yea! Let me go grab my wetsuit and board.', 'No way! Surfing is for hippies. I\'m a programmer!'],
-    ['I don\’t know how to dance.', 'I\’d rather go explore Switzerland!', 'Dance like the world is ending!'],
-    ['You\’ll hit Burning man up, but that’s about as much adventure as you want in life right now.', 'Switzerland sounds like a plan if I can make it past their customs officials!', 'I\’m going to play it safe and go back to my desk job!'],
-    ['You sign a 6 month contract and drink a few bottles of Sake to life, health, and prosperity.', 'Something is rotten in the state of coding Silicon Valley is in desperate need of young talent willing to throw themselves into a startup and you choose to join the fray!', 'You reject the contract and join some hipster burning man tribe that drives an eco bus around the world and builds sustainable housing for indigenous locals.'],
-    ['Start an american themed club/cafe', 'You eat massive quantities of food and start training to become a sumo Wrestler.', 'You go back to Safe, USA!']];
+    ['Go see a pod race.', 'Go to Jabba the Hut\'s palace.', 'Find Obi-wan Kenobi.'],
+    ['Go checkout the Bazzar', 'You ask a seeming harmless man for directions to the best hangout on Tatooine.', 'Engage in combat with a Jawa.'],
+    ['Enter in a Pod Race.', 'Go with him to Jabba\'s khetanna.', 'Try and get away.'],
+    ['Back out of the race and live.', 'Take it for a test run.', 'Trust your gut and go anyway.'],
+    ['Try and blend in and follow the group.', 'Gandalf is looking for someone to join him on an adventure.', 'Someone named Tyrion Lanister is looking for some help.']];
 
 var mainImagePaths = ['img/surfGirl.jpg', 'img/Swiss.jpg', 'img/swissMountains.jpg', 'img/daryan-shamkali-133233.jpg', 'img/tycho-atsma-181053.jpg'];
 
-var altQuestions = ['You\’ve ended up surfing in Australia! Funny how those little ideas grow. Are you ready to go get a coding job or get lost somewhere else?',
-  'You decide to travel to Switzerland and are met by a customs official who glares at you and asks, \"What is your business in Switzerland!?\"',
-  'PhewWWf! The customs officer seemed to be in a good mood and lets you in. Your visit in Switzerland was awesome, but now you’ve decided to do some work.',
-  'You got hired on at a startup specialising in… what do you do?'];
+var altQuestions = ['At the entrace to Jabba\'s Palace and angry pig man guards the door.',
+  'Inside Jabba\'s Palace a varitey of people are standing around drinking.', 'Jabba doesn\'t like stowaways so he gives you and ultimatum.',
+  'You wander in the desert, dehydrated and cold. What do you do.'];
 
 var altAnswers = [
-  ['Some of your new surfing bro\’s are heading to burning man in the summer, go with them.', 'I hear the Swiss Alps calling!', 'Vous parlez francais?'],
-  ['I don\’t have to deal with this guy, i can still meet up the Surfers at burning man.', 'I want to see your beautiful countryside.', 'My business is my business, i don\'t have to tell you!'],
-  ['A company in Japan is hiring.', 'A local startup is hiring, you’re not quite sure what for but hey, what could go wrong?', 'Yacht mate, I can use my coding skills to entice a rich yacht owner to hire me on to cruise the med and do his busy work.'],
-  ['Work hard and make it to the top of the food chain at the company.', 'Quit and try your luck as a serial entrepreneur.', 'Decide coding is not for you and fall back on your previous career.']];
+  ['Follow a stanger in Mandalorian Armor.', 'Bribe the guard.', 'Wave your hand infront of the guards face and say \"You will let me into the club\"'],
+  ['A shifty mechanic has a Pod Racing propisition for you.', 'Go with the group headded to Jabba\'s khetanna.', 'Check out the cool animals.'],
+  ['Steal a sand speeder and head to Mos Eisley.', 'Jump off and try to run.', 'Wear a golden bikini for the rest of your life.'],
+  ['Become one with the force.', 'Pull out your communicator and tell Scotty to beam you up.', 'Follow the shimmering Oasis.']];
 
 var altImagePaths = ['img/Kangaroo.jpg', 'img/GOT.jpg', 'img/bridge.jpg', 'img/breather-187939.jpg'];
 
@@ -144,7 +143,7 @@ function displayGameOver() {
   var sectionEl = document.getElementById('game-content');
   var messageEl = document.createElement('p');
   messageEl.setAttribute('id', 'game-over-message');
-  messageEl.textContent = 'I\'m very sorry, it appears that the last choice you made killed you.';
+  messageEl.textContent = 'We are very sorry, but you lose, good day sir and/or madam.  Good Day.';
   sectionEl.appendChild(messageEl);
 };
 
